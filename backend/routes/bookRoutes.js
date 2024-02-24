@@ -4,7 +4,7 @@ import {Book} from '../models/bookModel.js';
 const router = express.Router();
 
 //Route for save a new Book
-router.post('/', async (request, response) => {
+router.post('/create', async (request, response) => {
     try {
         if (
             !request.body.title ||
@@ -44,7 +44,7 @@ router.get('/', async (request, response) => {
 });
 
 //Route for Get One Books from database by id
-router.get('/:id', async (request, response) => {
+router.get('/details/:id', async (request, response) => {
     try {
         const { id } = request.params;
 
@@ -57,7 +57,7 @@ router.get('/:id', async (request, response) => {
 });
 
 //Route for update a Book
-router.put('/:id', async (request, respose) => {
+router.put('/edit/:id', async (request, respose) => {
     try {
         if (
             !request.body.title ||
@@ -83,7 +83,7 @@ router.put('/:id', async (request, respose) => {
 });
 
 //Route for Delete a Book
-router.delete('/:id', async (request, response) => {
+router.delete('/delete/:id', async (request, response) => {
     try {
         const { id } = request.params;
 
